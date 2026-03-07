@@ -9,5 +9,6 @@ router.get('/', (req, res) => {
 });
 
 router.get('/professional', professionalController.getAll);
+router.use('/contacts', require('./contacts'));
 
 module.exports = router;

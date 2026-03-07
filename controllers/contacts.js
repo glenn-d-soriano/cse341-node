@@ -1,11 +1,23 @@
 const mongodb = require('../db/connection');
+const ObjectId = require('mongodb').ObjectId; // Needed for getSingle
 
-const getAll = async (req, res, next) => {
-  const result = await mongodb.getDb().db().collection('contacts').find();
+const getAll = async (req, res) => {
+  
+  const result = await mongodb.getDb().db('cse341').collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
 };
 
-module.exports = { getAll };
+const getSingle = async (req, res) => {
+  
+  const userId = new ObjectId(req.params.id);
+  const result = await mongodb.getDb().db('cse341').collection('contacts').find({ _id: userId });
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  });
+};
+
+module.exports = { getAll, getSingle }; // Export both functions

@@ -1,0 +1,5 @@
+### Get all contacts
+GET https://cse341-node-j9h8.onrender.com/contacts
+
+### Get contact by ID (replace with a real ID from your DB)
+GET https://https://cse341-node-j9h8.onrender.com/contacts/69abb05c466779dc7c5cb43d

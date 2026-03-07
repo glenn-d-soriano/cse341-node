@@ -5,7 +5,7 @@ const professionalController = require('../controllers/professional');
 
 
 router.get('/', (req, res) => {
-  res.send('Hello! API is working!');
+  res.send('Hello World!');
 });
 
 router.get('/professional', professionalController.getAll);

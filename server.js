@@ -1,15 +1,20 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const mongodb = require('./db/connection'); 
+const app = express();
 const port = process.env.PORT || 8080; 
 
 app.use(cors());
 app.use(express.json());
+app.use('/', require('./routes'));
 
-const routes = require('./routes');
-app.use('/', routes);
-
-// Make sure this matches the lowercase 'port' from line 4
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+// Import routes
+mongodb.initDb((err) => {
+  if (err) {
+    console.log('Error connecting to MongoDB:', err);
+  } else {
+    app.listen(port, () => {
+      console.log(`Connected to DB and listening at http://localhost:${port}`);
+    });
+  }
 });

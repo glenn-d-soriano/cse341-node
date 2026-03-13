@@ -6,7 +6,7 @@ const doc = {
     description: 'Contacts API'
   },
   host: 'cse341-node-j9h8.onrender.com', //update to go to render instead of local host
-  schemes: ['http']
+  schemes: ['https']
 };
 
 const outputFile = './swagger.json';

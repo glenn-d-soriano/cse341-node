@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Contacts API'
   },
-  host: 'localhost:8080',
+  host: 'cse341-node-j9h8.onrender.com', //update to go to render instead of local host
   schemes: ['http']
 };
 

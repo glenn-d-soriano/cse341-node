@@ -1,5 +1,32 @@
 ### Get all contacts
 GET https://cse341-node-j9h8.onrender.com/contacts
 
-### Get contact by ID (replace with a real ID from your DB)
-GET https://https://cse341-node-j9h8.onrender.com/contacts/69abb05c466779dc7c5cb43d
+### Get contact by ID
+GET https://cse341-node-j9h8.onrender.com/contacts/69abb05c466779dc7c5cb43d
+
+### Create contact (POST)
+POST https://cse341-node-j9h8.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Glenn",
+    "lastName": "Soriano",
+    "email": "glenn@test.com",
+    "favoriteColor": "Blue",
+    "birthday": "03/12/1995"
+}
+
+### Update contact (PUT) - Replace ID with the one from the POST response
+PUT https://cse341-node-j9h8.onrender.com/contacts/69abb05c466779dc7c5cb43d HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Glenn",
+    "lastName": "Updated",
+    "email": "glenn@test.com",
+    "favoriteColor": "Green",
+    "birthday": "03/12/1995"
+}
+
+### Delete contact (DELETE) - Replace ID with the one you want to remove
+DELETE https://cse341-node-j9h8.onrender.com/contacts/69abb05c466779dc7c5cb43d

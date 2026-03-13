@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-console.log("Mongo URI:", process.env.MONGODB_URI);
+// console.log("Mongo URI:", process.env.MONGODB_URI); remove this to not show password in render
 const express = require('express');
 const cors = require('cors');
 const mongodb = require('./db/connection'); 
